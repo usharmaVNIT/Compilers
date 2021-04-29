@@ -1,0 +1,26 @@
+I have made several functions and the names of function pretty much tells what it does so I have given a short description in the starting of each function
+
+To run the program:
+
+python3 assignment3.py [filename]
+
+
+
+Note that three address code should be of the form
+
+line_no. Variable = Variable + Variable
+line_no. Variable = Variable + Number
+line_no. Variable = Variable
+
+All combinations of above eg
+
+1. a = b + c
+
+5. c = 5 * b
+
+7. c = 5
+
+
+
+I have made 3 files named threeaddr.txt , threeaddr2.txt and threeaddr3.txt that contains 3 address codes in this format
+I have also attached output files of each named output1.txt , output2.txt and output3.txt

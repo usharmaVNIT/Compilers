@@ -1,0 +1,110 @@
+
+
+Printing Information About Basic Blocks
+
+ ** Basic Block START **
+	 Start :  -1
+	 End :  -1
+ ** Basic Block END **
+	 Start :  -1
+	 End :  -1
+ ** Basic Block 1 **
+	 Start :  1
+	 End :  1
+ ** Basic Block 2 **
+	 Start :  2
+	 End :  2
+ ** Basic Block 3 **
+	 Start :  3
+	 End :  9
+ ** Basic Block 4 **
+	 Start :  10
+	 End :  11
+ ** Basic Block 5 **
+	 Start :  12
+	 End :  12
+ ** Basic Block 6 **
+	 Start :  13
+	 End :  17
+
+
+Printing Control Flow Of Basic Blocks 
+
+ Basic Block name :  START  ----->   Basic Block :  1
+ Basic Block name :  1  ----->   Basic Block :  2
+ Basic Block name :  2  ----->   Basic Block :  3
+ Basic Block name :  3  ----->   Basic Block :  3 , Basic Block :  4
+ Basic Block name :  4  ----->   Basic Block :  5 , Basic Block :  2
+ Basic Block name :  5  ----->   Basic Block :  6
+ Basic Block name :  6  ----->   Basic Block :  END , Basic Block :  6
+
+ *** Finding Dominators *** 
+
+{1: {1}, 2: {1, 2}, 3: {1, 2, 3}, 4: {1, 2, 3, 4}, 5: {1, 2, 3, 4, 5}, 6: {1, 2, 3, 4, 5, 6}, 'END': {1, 2, 3, 4, 5, 6, 'END'}}
+				------- Basic Block START
+				------- Basic Block END
+				------- Basic Block 1
+1. i = 1
+				------- Basic Block 2
+2. j = 1
+				------- Basic Block 3
+3. t1 = 10 * i
+4. t2 = t1 + j
+5. t3 = 8 * t2
+6. t4 = t3 - 88
+7. a[t4] = 0.0
+8. j = j + 1
+9. if (j<=10) goto 3
+				------- Basic Block 4
+10. i = i + 1
+11. if (i<=10) goto 2
+				------- Basic Block 5
+12. i = 1
+				------- Basic Block 6
+13. t5 = i - 1
+14. t6 = 88 * t5
+15. a[t6] = 1.0
+16. i = i + 1
+17. if (i<=10) goto 13
+
+
+ Unreachable Code 
+
+
+
+Showing Dead Code 
+
+				------- Basic Block END
+				------- Basic Block 1
+1. i = 1
+				------- Basic Block 2
+2. j = 1
+				------- Basic Block 3
+3. t1 = 10 * i
+4. t2 = t1 + j
+5. t3 = 8 * t2
+6. t4 = t3 - 88
+7. a[t4] = 0.0
+8. j = j + 1
+9. if (j<=10) goto 3
+				------- Basic Block 4
+10. i = i + 1
+11. if (i<=10) goto 2
+				------- Basic Block 5
+12. i = 1
+				------- Basic Block 6
+13. t5 = i - 1
+14. t6 = 88 * t5
+15. a[t6] = 1.0
+16. i = i + 1
+17. if (i<=10) goto 13
+
+
+ Printing Natural Loops 
+
+	Natural Loop from Basic Block 3 are : 
+		BasicBlock :  3 --> BasicBlock :  3
+Natural Loop from Basic Block 2 are : 
+		BasicBlock :  2 --> BasicBlock :  3 --> BasicBlock :  4 --> BasicBlock :  2
+Natural Loop from Basic Block 6 are : 
+		BasicBlock :  6 --> BasicBlock :  6

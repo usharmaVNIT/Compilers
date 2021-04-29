@@ -1,0 +1,7 @@
+Compiling Command :
+bison -d infixcalc.y && flex infixcalc.l && clang infixcalc.tab.c lex.yy.c -lm -o infix
+
+
+
+Note if this code does not compile in Mac Then use linux as it compiles on it
+Just in case I am also sending executables
